@@ -1,0 +1,20 @@
+<div class="input">
+  <input #newTodo (blur)="addTodo(newTodo.value); newTodo.value='' " placeholder="Add new todo">
+  <div class="input-button">
+    <button (click)="addTodo(newTodo.value)"><strong>Add</strong></button>
+  </div>
+</div>
+
+
+<table class="table">
+  <tr>
+    <th>Number</th>
+    <th>Description</th>
+  </tr>
+
+  <tr *ngFor="let item of toDoList, let i = index">
+    <td>{{i + 1}}</td>
+    <td>{{item}}</td>
+    <td><button (click)="deleteItem(i)">Delete</button></td>
+  </tr>
+</table>
